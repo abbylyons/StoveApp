@@ -17,7 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import com.github.mikephil.charting.charts.LineChart;
+import android.content.Context;
+import android.widget.RelativeLayout;
 
 public class ViewData extends ActionBarActivity implements ActionBar.TabListener {
 
@@ -61,10 +63,11 @@ public class ViewData extends ActionBarActivity implements ActionBar.TabListener
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);
 
-        LineChart chart = new LineChart(Context);
+        // Commented out for debugging purposes
+        /*LineChart chart = new LineChart(Context);
 
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout);
-                rl.add(chart);
+        RelativeLayout rl = (RelativeLayout) findViewById(R.id.viewDataLayout);
+                rl.add(chart);*/
 
             }
         });

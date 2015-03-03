@@ -11,7 +11,8 @@
         android:text="Collect New Data"
         android:id="@+id/button"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="toCollectData" />
 
     <Button
         android:layout_width="wrap_content"
@@ -20,6 +21,7 @@
         android:id="@+id/button2"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp" />
+        android:layout_marginTop="20dp"
+        android:onClick="toViewData" />
 
 </RelativeLayout>
