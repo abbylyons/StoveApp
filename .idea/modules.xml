@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StoveTemperatureApp.iml" filepath="$PROJECT_DIR$/StoveTemperatureApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StoveApp.iml" filepath="$PROJECT_DIR$/StoveApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
