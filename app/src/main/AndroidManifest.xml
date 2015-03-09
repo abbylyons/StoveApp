@@ -28,6 +28,14 @@
             android:label="@string/title_activity_view_data"
             android:parentActivityName=".MainActivity" >
         </activity>
+        <activity
+            android:name=".ViewTempData"
+            android:label="@string/title_activity_view_temp_data" >
+        </activity>
+        <activity
+            android:name=".ViewSmokeData"
+            android:label="@string/title_activity_view_smoke_data" >
+        </activity>
     </application>
 
 </manifest>

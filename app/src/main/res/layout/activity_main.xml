@@ -17,11 +17,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Data"
+        android:text="View Temperature Data"
         android:id="@+id/button2"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:onClick="toViewData" />
+        android:onClick="toViewTempData" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Smoke Data"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="toViewSmokeData" />
 
 </RelativeLayout>
