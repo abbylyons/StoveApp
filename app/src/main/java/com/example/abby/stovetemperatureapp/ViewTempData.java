@@ -9,8 +9,10 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.opencsv.CSVReader;
 
 
+import java.io.FileReader;
 import java.util.ArrayList;
 
 
@@ -25,6 +27,8 @@ public class ViewTempData extends ActionBarActivity {
 
         ArrayList<Entry> valsComp1 = new ArrayList<Entry>();
         ArrayList<Entry> valsComp2 = new ArrayList<Entry>();
+
+        CSVReader reader = new CSVReader(new FileReader("../../assets/basicTestCSV.csv"));
 
         Entry c1e1 = new Entry(100.000f, 0);
         valsComp1.add(c1e1);
@@ -63,8 +67,6 @@ public class ViewTempData extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_view_temp_data, menu);
-
-
 
         return true;
     }
