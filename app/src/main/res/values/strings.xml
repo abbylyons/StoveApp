@@ -2,6 +2,7 @@
     <string name="app_name">StoveTemperatureApp</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="collect_data_success">Data collection was a success!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_collect_data">Collect Data</string>
     <string name="title_activity_view_data">View Data</string>
