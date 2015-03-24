@@ -11,9 +11,12 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.opencsv.CSVReader;
 
+import android.util.Log;
 
+import android.graphics.Color;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,32 +43,41 @@ public class ViewTempData extends ActionBarActivity {
 
         InputStream inputStream = getResources().openRawResource(R.raw.testlist);
         CSVFile csvFile = new CSVFile(inputStream);
-        List scoreList = csvFile.read();
+        List<String[]> scoreList = csvFile.read();
 
+        //First index indicates what row (as many rows as data points)
+        //Second index indicates time (0) versus temp (1)
 
-        Entry c1e1 = new Entry(100.000f, 0);
-        valsComp1.add(c1e1);
-        Entry c1e2 = new Entry(50.000f, 1);
-        valsComp1.add(c1e2);
+        int lengthOfArray = scoreList.size();
 
-        Entry c2e1 = new Entry(120.000f, 0);
-        valsComp2.add(c2e1);
-        Entry c2e2 = new Entry(110.000f, 1);
-        valsComp2.add(c2e2);
+        //set y-values
+        for(int i=0; i<lengthOfArray-1; i++){
+            Entry c1 = new Entry(Float.parseFloat(scoreList.get(i)[1]),i);
+            valsComp1.add(c1);
+
+        }
+
 
         LineDataSet setComp1 = new LineDataSet(valsComp1, "Company 1");
-        LineDataSet setComp2 = new LineDataSet(valsComp2, "Company 2");
+        setComp1.setColor(Color.parseColor("#0099CC"));
 
         ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
         dataSets.add(setComp1);
-        dataSets.add(setComp2);
 
         ArrayList<String> xVals = new ArrayList<String>();
-        xVals.add("1.Q"); xVals.add("2.Q"); xVals.add("3.Q"); xVals.add("4.Q");
+
+        //set x-values
+        for(int i=0; i<lengthOfArray-1; i++){
+            xVals.add(scoreList.get(i)[0]);
+        }
 
         LineData data = new LineData(xVals, dataSets);
         chart.setData(data);
         chart.invalidate();
+        chart.setTouchEnabled(true);
+        chart.setDragEnabled(true);
+        chart.setScaleEnabled(true);
+
 
         setContentView(chart);
 

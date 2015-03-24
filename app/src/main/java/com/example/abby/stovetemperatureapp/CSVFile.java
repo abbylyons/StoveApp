@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
+import android.util.Log;
 
 public class CSVFile {
 
@@ -19,14 +21,16 @@ public class CSVFile {
         this.inputStream = inputStream;
     }
 
-    public List read(){
+    public List<String[]> read(){
         List resultList = new ArrayList();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         try {
             String csvLine;
             while ((csvLine = reader.readLine()) != null) {
                 String[] row = csvLine.split(",");
+                //Log.i("System.out",Arrays.toString(row));
                 resultList.add(row);
+
             }
         }
         catch (IOException ex) {
