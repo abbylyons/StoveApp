@@ -14,6 +14,15 @@ import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+
+
+
 
 
 public class ViewTempData extends ActionBarActivity {
@@ -28,7 +37,11 @@ public class ViewTempData extends ActionBarActivity {
         ArrayList<Entry> valsComp1 = new ArrayList<Entry>();
         ArrayList<Entry> valsComp2 = new ArrayList<Entry>();
 
-        CSVReader reader = new CSVReader(new FileReader("../../assets/basicTestCSV.csv"));
+
+        InputStream inputStream = getResources().openRawResource(R.raw.testlist);
+        CSVFile csvFile = new CSVFile(inputStream);
+        List scoreList = csvFile.read();
+
 
         Entry c1e1 = new Entry(100.000f, 0);
         valsComp1.add(c1e1);
