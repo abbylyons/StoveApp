@@ -28,7 +28,7 @@
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/csv" />
+                <data android:mimeType="text/csv"/>
             </intent-filter>
         </activity>
         <activity

@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.database.Cursor;
 
+// From https://developer.android.com/guide/topics/connectivity/nfc/nfc.html
 
 public class CollectData extends ActionBarActivity {
 
