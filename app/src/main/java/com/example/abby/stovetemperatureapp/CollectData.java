@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.database.Cursor;
+import android.content.Context;
+import android.widget.Toast;
 
 // From https://developer.android.com/guide/topics/connectivity/nfc/nfc.html
 
@@ -47,6 +49,12 @@ public class CollectData extends ActionBarActivity {
                 mParentPath = handleContentUri(beamUri);
             }
         }
+        // Debug
+        Context context = getApplicationContext();
+        CharSequence text = "Path: " + mParentPath.getPath();
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     @Override
