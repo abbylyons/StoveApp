@@ -20,23 +20,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <data android:mimeType="mime/type" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".CollectData"
             android:label="@string/title_activity_collect_data"
-            android:parentActivityName=".MainActivity"
-            tools:ignore="UnusedAttribute" >
+            android:parentActivityName=".MainActivity" >
+            <!--tools:ignore="UnusedAttribute" >-->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/csv"/>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ViewData"
-            android:label="@string/title_activity_view_data"
-            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
             android:name=".ViewTempData"

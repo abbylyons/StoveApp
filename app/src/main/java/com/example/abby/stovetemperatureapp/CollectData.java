@@ -164,6 +164,7 @@ public class CollectData extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        mTextView = (TextView) findViewById(R.id.textView);
 
         if (mNfcAdapter == null) {
             // Stop here, we definitely need NFC
